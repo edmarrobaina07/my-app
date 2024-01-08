@@ -1,16 +1,19 @@
 import styled from 'styled-components'
-import Baground from './assets/background1.svg'
+
+import Baground from '../../assets/background.svg'
 
 export const Container = styled.div`
 background: url(${Baground});
 background-size: cover;
+ 
 
 display: flex;
 flex-direction: column;
 align-items: center;
 gap: 40px;
 
-height: 170vh;
+height: 100%;
+min-height: 100vh;
 
 `;
 
@@ -23,10 +26,12 @@ export const ContainerItens = styled.div`
 background: linear-gradient(157.44deg, rgba(255, 255, 255, 0.6) 0.84%, rgba(255, 255, 255, 0.6) 0.85%, rgba(255, 255, 255, 0.15) 100%);
 border-radius: 61px 61px 0px 0px;
 padding: 50px 37px;
+backdrop-filter: blur(45px);
 
 display: flex;
 flex-direction: column;
-height: 200vh;
+height: 100%;
+min-height: calc(100vh - 170px);
 
 `;
 
@@ -43,45 +48,12 @@ color: #ffff;
 
 `;
 
-export const InputLabel = styled.p`
-font-family: Roboto;
-font-size: 18px;
-font-weight: 700;
-line-height: 22px;
-letter-spacing: -0.40799999237060547px;
-text-align: left;
-color: #ffff;
-margin-left: 25px;
-
-`;
-
-export const Input = styled.input`
-box-shadow: 0px 4px 4px 0px #00000040;
-border-radius: 14px;
-background: rgba(255, 255, 255, 0.6);
-width: 342px;
-height: 57px;
-border: none;
-outline: none;
-padding-left: 25px;
-margin-bottom: 34px;
-font-family: Roboto;
-font-size: 20px;
-font-weight: 400;
-line-height: 28px;
-letter-spacing: 0px;
-text-align: left;
-color: #ffff;
-
-
-`;
-
 export const Button = styled.button`
-background: #000000CC;
+background: transparent;
 width: 342px;
 height: 74px;
 border-radius: 14px;
-border: none;
+border: 1px solid #ffff;
 font-family: Roboto;
 font-size: 17px;
 font-weight: 700;
@@ -89,6 +61,12 @@ line-height: 28px;
 letter-spacing: 0px;
 color: #ffff;
 cursor: pointer;
+margin-top: 120px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
 
 &:hover {
     opacity: 0.7;
